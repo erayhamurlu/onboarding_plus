@@ -16,6 +16,7 @@ This package provide easily create onboarding page.
 ## Features
 
 You can edit colors and text styles.
+![alt text](https://github.com/erayhamurlu/onboarding_plus/blob/main/screenshot1.png)
 
 
 ## Getting started
