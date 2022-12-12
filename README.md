@@ -23,7 +23,7 @@ You can edit colors and text styles.
 
 ## Getting started
 
-Add in your pubspec.yaml file onboarding_plus
+Add in your pubspec.yaml file lastest version of onboarding_plus
 
 ## Usage
 
