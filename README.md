@@ -19,7 +19,7 @@ You can edit colors and text styles.
 
 |Image1 | Image2| GIF |
 |---|---|---|
-|<img src="https://github.com/erayhamurlu/onboarding_plus/blob/main/screenshot1.png" width="238" height="500">|<img src="https://github.com/erayhamurlu/onboarding_plus/blob/main/screenshot2.png" width="238" height="500">|<img src="https://github.com/erayhamurlu/onboarding_plus/blob/main/gif1.gif" width="238" height="500">|
+|<img src="https://github.com/erayhamurlu/onboarding_plus/raw/main/screenshot1.png" width="238" height="500">|<img src="https://github.com/erayhamurlu/onboarding_plus/raw/main/screenshot2.png" width="238" height="500">|<img src="https://github.com/erayhamurlu/onboarding_plus/raw/main/gif1.gif" width="238" height="500">|
 
 ## Getting started
 
