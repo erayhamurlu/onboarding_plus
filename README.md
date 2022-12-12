@@ -27,7 +27,29 @@ Add in your pubspec.yaml file lastest version of onboarding_plus
 
 ## Usage
 
-Call this widget OnboardingView()
+Call this widget in body OnboardingView()
+
+```dart
+@override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: OnboardingView(
+      pageList: onboardingList,
+      pageWidth: MediaQuery.of(context).size.width, //context.width,
+      pageHeight: MediaQuery.of(context).size.height, //context.height,
+      backgroundColor: Colors.black,
+      skipButtonColor: Colors.purple,
+      skipButtonTextStyle: const TextStyle(color: Colors.white),
+      nextButtonTextStyle: const TextStyle(color: Colors.white),
+      doneButtonTextStyle: const TextStyle(color: Colors.white),
+      deactiveDotColor: Colors.grey,
+      activatedDotColor: Colors.purple,
+      nextButtonColor: Colors.purple,
+      onPressedSkip: onPressedSkip,
+      onPressedDone: onPressedDone,
+    ));
+  }
+```
 
 ## Additional information
 
