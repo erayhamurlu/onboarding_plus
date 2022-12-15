@@ -45,8 +45,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: OnboardingView(
+    return OnboardingViewer(
       pageList: onboardingList,
       pageWidth: MediaQuery.of(context).size.width, //context.width,
       pageHeight: MediaQuery.of(context).size.height, //context.height,
@@ -55,12 +54,15 @@ class _OnboardingPageState extends State<OnboardingPage> {
       skipButtonTextStyle: const TextStyle(color: Colors.white),
       nextButtonTextStyle: const TextStyle(color: Colors.white),
       doneButtonTextStyle: const TextStyle(color: Colors.white),
-      deactiveDotColor: Colors.grey,
+      deactiveDotColor: Colors.black,
       activatedDotColor: Colors.purple,
       nextButtonColor: Colors.purple,
       onPressedSkip: onPressedSkip,
       onPressedDone: onPressedDone,
-    ));
+      dotSize: Size(12, 12), bottomPadding: 110, topPadding: 0,
+      borderColor: Colors.purple,
+      borderWidth: 1,
+    );
   }
 }
 

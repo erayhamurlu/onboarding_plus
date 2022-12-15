@@ -2,44 +2,53 @@ library onboarding_plus;
 
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'provider/onboarding_provider.dart';
 
-class OnboardingView extends StatefulWidget {
-  OnboardingView({
+class OnboardingViewer extends StatefulWidget {
+  OnboardingViewer({
     super.key,
     required this.pageList,
     required this.pageWidth,
     required this.pageHeight,
+    required this.dotSize,
+    required this.borderWidth,
     required this.backgroundColor,
+    required this.nextButtonColor,
     required this.skipButtonColor,
+    required this.deactiveDotColor,
+    required this.activatedDotColor,
+    required this.borderColor,
     required this.skipButtonTextStyle,
     required this.nextButtonTextStyle,
     required this.doneButtonTextStyle,
-    required this.deactiveDotColor,
-    required this.activatedDotColor,
-    required this.nextButtonColor,
     required this.onPressedSkip,
     required this.onPressedDone,
+    required this.topPadding,
+    required this.bottomPadding,
   });
   List<dynamic> pageList = [];
+  double pageWidth;
+  double pageHeight;
+  double topPadding;
+  double bottomPadding;
+  double borderWidth;
+  Size dotSize;
   Color backgroundColor;
   Color skipButtonColor;
+  Color nextButtonColor;
   Color deactiveDotColor;
   Color activatedDotColor;
-  Color nextButtonColor;
+  Color borderColor;
   TextStyle skipButtonTextStyle;
   TextStyle nextButtonTextStyle;
   TextStyle doneButtonTextStyle;
-  double pageWidth;
-  double pageHeight;
   VoidCallback onPressedSkip;
   VoidCallback onPressedDone;
 
   @override
-  State<OnboardingView> createState() => _OnboardingViewState();
+  State<OnboardingViewer> createState() => _OnboardingViewerState();
 }
 
-class _OnboardingViewState extends State<OnboardingView> {
+class _OnboardingViewerState extends State<OnboardingViewer> {
   final PageController _pageController = PageController();
   double currentIndex = 0;
 
@@ -49,11 +58,12 @@ class _OnboardingViewState extends State<OnboardingView> {
       backgroundColor: widget.backgroundColor,
       body: Column(
         children: [
+          SizedBox(height: widget.topPadding),
           Container(
             color: widget.backgroundColor,
             child: SizedBox(
               // width: widget.pageWidth,
-              height: widget.pageHeight - 110,
+              height: widget.pageHeight - widget.bottomPadding,
               child: PageView.builder(
                 controller: _pageController,
                 itemCount: widget.pageList.length,
@@ -93,6 +103,11 @@ class _OnboardingViewState extends State<OnboardingView> {
                   dotsCount: widget.pageList.length,
                   position: currentIndex,
                   decorator: DotsDecorator(
+                    shape: CircleBorder(
+                      side: BorderSide(width: widget.borderWidth, strokeAlign: StrokeAlign.inside, color: widget.borderColor),
+                    ),
+                    activeSize: widget.dotSize,
+                    size: widget.dotSize,
                     color: widget.deactiveDotColor,
                     activeColor: widget.activatedDotColor,
                   ),
